@@ -5,12 +5,12 @@ import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { actionType } from "../context/reducer";
 import { useStateValue } from "../context/StateProvider";
 import { getAllOrders, updatePayment } from "../utils/firebaseFunctions";
 import { useNavigate, useParams } from "react-router";
 import { FiEye } from "react-icons/fi";
+import { AiOutlineArrowDown } from "react-icons/ai";
 
 const Ordenes = () => {
   const history = useNavigate();
@@ -194,7 +194,7 @@ console.log(d)
                 sx={{
                   padding: 0,
                 }}
-                expandIcon={<ExpandMoreIcon />}
+                expandIcon={<AiOutlineArrowDown />}
                 aria-controls="panel1bh-content"
                 id="panel1bh-header"
               >

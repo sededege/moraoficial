@@ -15,13 +15,12 @@ import Comentarios from "./Comentarios";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import mp from "../../components/img/mp.webp";
 import efectivo from "../../components/img/efectivo.png";
 import { motion } from "framer-motion";
 import { toast } from "react-toastify";
 import { colors } from "../variables/variables";
-import { AiFillBackward, AiOutlineArrowLeft } from "react-icons/ai";
+import { AiFillBackward, AiOutlineArrowDown, AiOutlineArrowLeft } from "react-icons/ai";
 
 
 const Detalle = () => {
@@ -211,23 +210,7 @@ const Detalle = () => {
                           </p>
                         </div>
                       )}
-                      {/* <div className='flex gap-4'>
-
-                                                        <Rating
-
-                                                            name="simple"
-                                                            value={5}
-
-                                                            sx={{
-                                                                "& .MuiRating-iconFilled": {
-                                                                    color: "#ffb381"
-                                                                },
-                                                                "& .MuiRating-iconHover": {
-                                                                    color: "purple"
-                                                                }
-                                                            }}
-                                                        /> <p className='font-light text-gray-400'>(5 reviews)</p>
-                                                    </div> */}
+                    
                     </div>
                     <div className="flex flex-col gap-6 mr-10">
                       <p className="font-normal text-[0.9rem] text-gray-600">
@@ -343,7 +326,7 @@ const Detalle = () => {
                           sx={{
                             padding: 0,
                           }}
-                          expandIcon={<ExpandMoreIcon />}
+                          expandIcon={<AiOutlineArrowDown />}
                           aria-controls="panel1bh-content"
                           id="panel1bh-header"
                         >
@@ -373,43 +356,7 @@ const Detalle = () => {
                         </AccordionDetails>
                       </Accordion>
                     </div>
-                    {/*  <div className='flex flex-col gap-4'>
-                                                    <Accordion
-                                                        sx={{
-                                                            border: 'none',
-                                                            dropShadow: 'none',
-                                                            boxShadow: 'none',
-                                                            padding: 0,
-
-                                                        }}
-                                                        expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
-                                                        <AccordionSummary
-                                                            sx={{
-
-                                                                padding: 0,
-
-                                                            }}
-                                                            expandIcon={<ExpandMoreIcon />}
-                                                            aria-controls="panel1bh-content"
-                                                            id="panel1bh-header"
-                                                        >
-                                                            <Typography sx={{
-
-                                                                width: '55%',
-                                                                fontFamily: 'Poppins',
-                                                                fontSize: 'bold'
-
-                                                            }}>
-                                                                Comentarios
-                                                            </Typography>
-                                                        </AccordionSummary>
-                                                        <AccordionDetails>
-                                                            <div>
-                                                                <Comentarios comentarios={thisProduct.comentarios} />
-                                                            </div>
-                                                        </AccordionDetails>
-                                                    </Accordion>
-                                                </div> */}
+                 
                     <div className="flex flex-col gap-4">
                       <Accordion
                         sx={{
@@ -425,7 +372,7 @@ const Detalle = () => {
                           sx={{
                             padding: 0,
                           }}
-                          expandIcon={<ExpandMoreIcon />}
+                          expandIcon={<AiOutlineArrowDown />}
                           aria-controls="panel1bh-content"
                           id="panel1bh-header"
                         >
@@ -461,17 +408,7 @@ const Detalle = () => {
                         </AccordionDetails>
                       </Accordion>
                     </div>
-                    {/*  <div className='flex flex-col gap-4 w-full px-10 '>
-                                                <p className='font-bold text-textColor'>Caracteristicas</p>
-                                                <ul className='font-light text-gray-400'>
-                                                    <li className='font-light'>Tipo de estampado:<span> {thisProduct.estampado}</span></li>
-                                                    <li className='font-light'>Longitud:<span> {thisProduct.longitud}</span></li>
-                                                    <li className='font-light'>Material:<span> {thisProduct.material}</span></li>
-                                                    <li className='font-light'>Color:<span> {filtrocolorselect}</span></li>
-                                                    <li className='font-light'>Composicion:<span> {thisProduct.composicion}</span></li>
-                                                    <li className='font-light'>Actividad:<span> {thisProduct.actividad}</span></li>
-                                                </ul>
-                                            </div> */}
+                  
                   </div>
                   <div className="flex items-center  fixed right-20 bottom-20 ">
                     <div className="flex gap-8 mt-10  items-center">
@@ -496,13 +433,6 @@ const Detalle = () => {
                           </p>
                         )}
                       </div>
-
-                      {/*
-                                                    <motion.div
-                                                        whileTap={{ scale: 0.75 }}
-                                                        className=' group  bg-gray-200 hover:bg-gray-400 p-3 items-center justify-center flex cursor-pointer rounded-lg'>
-                                                        <button className='text-gray-400 group-hover:text-white'>Añadir a deseados</button>
-                                                    </motion.div> */}
                       <motion.button
                         whileTap={{ scale: 0.75 }}
                         onClick={() => pedido(thisProduct)}
@@ -583,30 +513,7 @@ const Detalle = () => {
               />
             </div>
 
-            {/*        <div className='flex items-center gap-4'>
-                                <p onClick={() => setToggle('Info')} className={` ${toggle === 'Info' ? 'text-booty border-b-booty border-b-4 py-2  font-bold' : 'text-gray-400 py-2 font-bold'} `}>Informacion</p>
-                                <p onClick={() => setToggle('Reviews')} className={` ${toggle === 'Reviews' ? 'text-booty border-b-booty border-b-4 py-2  font-bold' : 'text-gray-400 py-2 font-bold'} `}>Comentarios ({thisProduct.comentarios ? thisProduct.comentarios.length : console.log('no existe')})</p>
-
-                            </div> */}
-
-            {/* <div className='flex gap-4'>
-                                <Rating
-                                    name="simple-controlled"
-                                    value={value}
-                                    onChange={(event, newValue) => {
-                                        setValue(newValue);
-                                    }}
-                                    sx={{
-                                        "& .MuiRating-iconFilled": {
-                                            color: "#ffb381"
-                                        },
-                                        "& .MuiRating-iconHover": {
-                                            color: "purple"
-                                        }
-                                    }}
-                                />
-                                <p className='font-light text-gray-400'>({thisProduct.comentarios ? thisProduct.comentarios.length : console.log('no existe')} reviews)</p>
-                            </div> */}
+          
             <div className="flex flex-col  items-center gap-6">
               {toggle === "Info" ? (
                 <div className=" w-[100vw]  p-5 h-full ">
@@ -618,23 +525,7 @@ const Detalle = () => {
                         </p>
                       </div>
 
-                      {/* <div className='flex gap-4'>
-
-                                                        <Rating
-
-                                                            name="simple"
-                                                            value={5}
-
-                                                            sx={{
-                                                                "& .MuiRating-iconFilled": {
-                                                                    color: "#ffb381"
-                                                                },
-                                                                "& .MuiRating-iconHover": {
-                                                                    color: "purple"
-                                                                }
-                                                            }}
-                                                        /> <p className='font-light text-gray-400'>(5 reviews)</p>
-                                                    </div> */}
+                    
                     </div>
                     <div className="flex flex-col gap-6 mr-10">
                       <p className="font-normal text-[0.9rem] text-gray-400">
@@ -676,18 +567,7 @@ const Detalle = () => {
                           Talle
                         </p>
                         <div className="gap-2 flex">
-                          {/*  {
-                                                        thisProduct.talles ? thisProduct.talles.map(a => (
-                                                            a.stock > 0 ?
-                                                                <div onClick={() => setSelectedSize(a.name)} className={` ${selectedsize === a.name ? 'text-white bg-booty' : 'bg-white border-2'}  flex cursor-pointer w-8 h-8 rounded-lg  items-center justify-center`}>
-                                                                    <p className='cursor-pointer  '>{a.name}</p>
-                                                                </div> : <div className='bg-gray-200 border-2 flex cursor-pointer w-8 h-8 rounded-lg  items-center justify-center'>
-                                                                    <p className='cursor-pointer text-gray-400'>{a.name}</p>
-                                                                </div>
-
-                                                        )) : <></>
-
-                                                    } */}
+                   
                           {thisProduct.color && filtrocolorselect ? (
                             thisProduct.color
                               .filter((a) => a.name === filtrocolorselect)[0]
@@ -764,7 +644,7 @@ const Detalle = () => {
                           sx={{
                             padding: 0,
                           }}
-                          expandIcon={<ExpandMoreIcon />}
+                          expandIcon={<AiOutlineArrowDown />}
                           aria-controls="panel1bh-content"
                           id="panel1bh-header"
                         >
@@ -810,7 +690,7 @@ const Detalle = () => {
                           sx={{
                             padding: 0,
                           }}
-                          expandIcon={<ExpandMoreIcon />}
+                          expandIcon={<AiOutlineArrowDown />}
                           aria-controls="panel1bh-content"
                           id="panel1bh-header"
                         >
@@ -847,17 +727,7 @@ const Detalle = () => {
                         </AccordionDetails>
                       </Accordion>
                     </div>
-                    {/*  <div className='flex flex-col gap-4 w-full px-10 '>
-                                                <p className='font-bold text-textColor'>Caracteristicas</p>
-                                                <ul className='font-light text-gray-400'>
-                                                    <li className='font-light'>Tipo de estampado:<span> {thisProduct.estampado}</span></li>
-                                                    <li className='font-light'>Longitud:<span> {thisProduct.longitud}</span></li>
-                                                    <li className='font-light'>Material:<span> {thisProduct.material}</span></li>
-                                                    <li className='font-light'>Color:<span> {filtrocolorselect}</span></li>
-                                                    <li className='font-light'>Composicion:<span> {thisProduct.composicion}</span></li>
-                                                    <li className='font-light'>Actividad:<span> {thisProduct.actividad}</span></li>
-                                                </ul>
-                                            </div> */}
+                  
                   </div>
 
                   <div className="flex  mt-10 items-center justify-between">
